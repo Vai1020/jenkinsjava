@@ -1,0 +1,29 @@
+[23/04, 1:28 pm] Aman VR: exp-7, 
+
+Dockerfile:
+
+FROM php
+
+COPY ./hello.php ./
+
+EXPOSE 6969
+
+CMD ["php","-S","0.0.0.0:6969"]
+
+hello.php
+
+<html>
+
+    <?php echo"Puja Padiya">
+
+</html>
+
+COMMANDS-
+
+docker login
+
+docker build . -t/username/foldername
+
+docker run --name=php -p=6969:6969
+
+[23/04, 1:29 pm] Aman VR: docker run --name=php -p=6969:6969 username/foldername
