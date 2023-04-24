@@ -1,0 +1,87 @@
+Microsoft Windows [Version 10.0.19044.2251]
+
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Kaif Bijali>docker login
+
+Authenticating with existing credentials...
+
+Login did not succeed, error: error during connect: This error may indicate that the docker daemon is not running.: Post "http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.24/auth": open //./pipe/docker_engine: The system cannot find the file specified.
+
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+
+Username (kaif47): EOF
+
+C:\Users\Kaif Bijali>
+
+C:\Users\Kaif Bijali>docker login
+
+Authenticating with existing credentials...
+
+Login Succeeded
+
+Logging in with your password grants your terminal complete access to your account.
+
+For better security, log in with a limited-privilege personal access token. Learn more at https://docs.docker.com/go/access-tokens/
+
+C:\Users\Kaif Bijali>docker pull ubuntu
+
+Using default tag: latest
+
+latest: Pulling from library/ubuntu
+
+2ab09b027e7f: Pull complete
+
+Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
+
+Status: Downloaded newer image for ubuntu:latest
+
+docker.io/library/ubuntu:latest
+
+C:\Users\Kaif Bijali>docker run -it -d ubuntu
+
+7cc7db8075273b1eba25c0c5eb532896ffff5fcdf442ede69595c532866da589
+
+C:\Users\Kaif Bijali>docker images
+
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+
+kaif47/dockya           latest    0a3b7041dffe   10 minutes ago   485MB
+
+kaif47/phphellodocker   latest    9a52e07c7222   9 days ago       485MB
+
+<none>                  <none>    9fd71e2feda8   9 days ago       485MB
+
+kaif47/phphelloworld    latest    c5017861f3c3   9 days ago       485MB
+
+<none>                  <none>    eddd3e662dee   9 days ago       485MB
+
+<none>                  <none>    7355e4ef4990   9 days ago       921MB
+
+kaif47/python           latest    4665a951a37e   11 days ago      921MB
+
+python                  latest    4665a951a37e   11 days ago      921MB
+
+ubuntu                  latest    08d22c0ceb15   6 weeks ago      77.8MB
+
+C:\Users\Kaif Bijali>docker tag ubuntu kaif47/ubuntu
+
+C:\Users\Kaif Bijali>docker push kaif47/ubuntu
+
+Using default tag: latest
+
+The push refers to repository [docker.io/kaif47/ubuntu]
+
+b93c1bd012ab: Mounted from library/ubuntu
+
+latest: digest: sha256:5523f822d85895b0a75236aba20ff6bf4135721b031fceee7a5c4a74a700c1e6 size: 529
+
+C:\Users\Kaif Bijali>docker ps
+
+CONTAINER ID   IMAGE           COMMAND                  CREATED         STATUS         PORTS                    NAMES
+
+7cc7db807527   ubuntu          "/bin/bash"              2 minutes ago   Up 2 minutes                            objective_jepsen
+
+6d44c3ee841e   kaif47/dockya   "docker-php-entrypoi…"   8 minutes ago   Up 8 minutes   0.0.0.0:6969->6969/tcp   php
+
+C:\Users\Kaif Bijali>
